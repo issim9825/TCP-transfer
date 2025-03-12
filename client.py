@@ -1,14 +1,20 @@
 from socket import *
 import argparse as ap
+import sys
 
 
 parser = ap.ArgumentParser(description="Check for specified server-ip (-i) and port-numper (-p)")
 # Add the arguments
-parser.add_argument("-i", "--server", help="Servers host name", type=str)
+parser.add_argument("-i", "--server", help="Servers host name")
 parser.add_argument("-p", "--port", help="Port server is listening on", type=int)
 parser.add_argument("-f", "--file", help="Filename the server shall return")
 
 args = parser.parse_args()
+
+# Error-handling
+if len(sys.argv) != 7:
+    print('Usage: python3 client.py -i <server_ip> -p <port> -f <file>')
+    sys.exit(1)
 
 # Initiate variables
 serverName = args.server
