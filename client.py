@@ -24,7 +24,7 @@ request = f"GET /{filename} HTTP/1.1\r\nHost: {serverName}\r\nConnection: close\
 clientSocket.send(request.encode())
 
 # Receive response
-response = '' # Start empty string
+response = '' # Initilize response-string
 while True:
     chunk = clientSocket.recv(1024).decode()
     if not chunk:

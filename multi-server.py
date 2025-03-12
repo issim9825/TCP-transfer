@@ -4,14 +4,18 @@ import time
 import sys
 
 def now():
-    # returns time of day
+    '''returns time of day'''
     return time.ctime(time.time())
 
 def handleClient(connection):
     '''
+    Description:
     a client handler function that receives a GET-request,
     reads the filename and sends HTTP header line into socket.
     Sends 404 Not Found if file is not in the directory
+    Arguments:
+    connection: holds the connectionSocket connected to server
+    Returns: void
     '''
     try:
         # Receive message from GET-request
@@ -42,6 +46,7 @@ def handleClient(connection):
 
 def main():
     '''
+    Description:
     creates a server socket, listens for new connections,
     and spawns a new thread whenever a new connection join
     '''
