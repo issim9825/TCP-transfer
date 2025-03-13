@@ -11,9 +11,9 @@ Go to https://localhost:12000/index.html to get the index-file from the servers 
 ## Task 2
 
 Run `python3 webserver.py` in one terminal.  
-Run `python3 client.py -i 'localhost' -p 12000 -f index.html` in another terminal to get the HTTP headers and content of the index-file.
+Run `python3 client.py -i localhost -p 12000 -f index.html` in another terminal to get the HTTP headers and content of the index-file.
 
-Run `python3 client.py -i 'localhost' -p 12000 -f <non-existing file>` to get the 404 message as output.
+Run `python3 client.py -i localhost -p 12000 -f <non-existing file>` to get the 404 message as output.
 
 ## Task 3
 
@@ -24,4 +24,6 @@ Then test the server as described in [Task 1](#task-1) and [Task 2](#task-2)
 
 The screenshots and traces are placed in the Mininet-directory.  
 Use the program simpletopo.py to get the mininet-terminals up and running.  
-Run the server in h3, set up listening on r2, and make the client call from h1.
+Run `sudo python3 webserver.py` on h3.  
+Run `tcpdump -i r2-et1 -tttt` on r2. (If you want the traces, include `traces.pcap`).  
+Run `sudo python3 client.py -i 10.0.1.2 -p 12000 -f index.html` on h1 to get the index-file.
