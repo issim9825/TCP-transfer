@@ -70,10 +70,10 @@ def main():
             print('Ready to serve...')
             thread.start_new_thread(handleClient, (connectionSocket,))
         except:
-            break
+            break #End loop if interrupted
         
     # Close server socket
     serverSocket.close()
-    sys.exit()#Terminate the program after sending the corresponding data
+    sys.exit() #Terminate the program after sending the corresponding data
 
 if __name__ == "__main__": main()
