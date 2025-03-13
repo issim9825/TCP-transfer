@@ -18,12 +18,14 @@ Run `python3 client.py -i localhost -p 12000 -f <non-existing file>` to get the 
 ## Task 3
 
 Run `python3 multi-server.py` in terminal.  
-Then test the server as described in [Task 1](#task-1) and [Task 2](#task-2)
+Then test the server as described in [Task 1](#task-1) and/or [Task 2](#task-2).
 
 ## Task 4
 
 The screenshots and traces are placed in the Mininet-directory.  
 Use the program simpletopo.py to get the mininet-terminals up and running.  
+Run it with `sudo python3 simpletopo.py`, mininet has to be run as root.
+
 Run `sudo python3 webserver.py` on h3.  
-Run `tcpdump -i r2-et1 -tttt` on r2. (If you want the traces, include `traces.pcap`).  
+Run `tcpdump -i r2-et1 -tttt` on r2. (If you want the traces, include `-w traces.pcap`).  
 Run `sudo python3 client.py -i 10.0.1.2 -p 12000 -f index.html` on h1 to get the index-file.
