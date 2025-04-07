@@ -1,0 +1,8 @@
+# Ignore files not related to image
+
+mininet/
+
+README.md
+
+multi-server.py
+simpletopo.py
